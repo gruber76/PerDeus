@@ -1,4 +1,4 @@
-// npm install --save-dev es6ify grunt grunt-browserify grunt-contrib-clean grunt-contrib-connect grunt-contrib-copy grunt-contrib-livereload grunt-contrib-uglify grunt-contrib-watch grunt-jsxhint grunt-react grunt-watchify react-tools matchdep
+// npm install --save-dev connect-livereload es6ify grunt grunt-browserify grunt-contrib-clean grunt-contrib-connect grunt-contrib-copy grunt-contrib-livereload grunt-contrib-uglify grunt-contrib-watch grunt-jsxhint grunt-react grunt-watchify react-tools matchdep
 // npm install flux object-assign react
 
 module.exports = function (grunt) {
@@ -42,6 +42,7 @@ module.exports = function (grunt) {
                 options: {
                     middleware: function (connect) {
                         return [
+                            require('connect-livereload')(),
                             lrSnippet,
                             mountFolder(connect, settings.paths.dest)
                         ];
