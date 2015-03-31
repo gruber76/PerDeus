@@ -2,3 +2,5 @@ node_modules
 PerDeus.iml
 .idea
 dest
+src/data/rates.json
+src/data/zips.json
